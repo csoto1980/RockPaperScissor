@@ -13,40 +13,48 @@ namespace RockPaper
         //Constructor
         public Human()
         {
+            score = 0;
             Console.WriteLine("Enter Player name: ");
             name = Console.ReadLine();
-            score = 0;
+        
         }
         //Member Methods
         public override void ChooseGestures()
         {
             Console.WriteLine("Choose your gesture: (1-Rock, 2-Paper, 3-Scissors, 4-Lizard or 5-Spoke)");
-            int input = int.Parse(Console.ReadLine());
-            if(input == 1)
+            gesture = Console.ReadLine();
+            if(gesture == "1" || gesture == "Rock" )
             {
+                
                 Console.WriteLine("Rock it is. Good Luck!");
+                return;
             }
-            else if (input == 2)
+            else if (gesture == "2" || gesture == "Paper")
             {
                 Console.WriteLine("Paper it is. Good Luck!");
+                return;
             }
-            else if (input == 3)
+            else if (gesture == "3" || gesture == "Scissors")
             {
                 Console.WriteLine("Scissors it is. Good Luck!");
+                return;
             }
-            else if (input == 4)
+            else if (gesture == "4" || gesture == "Lizard")
             {
                 Console.WriteLine("Lizard it is. Good Luck!");
+                return;
             }
-            else if (input == 5)
+            else if (gesture == "5" || gesture == "Spoke")
             {
                 Console.WriteLine("Spoke it is. Good Luck!");
+                return;
             }
             else
             {
                 Console.WriteLine("Invalid choice. Please enter number associated with your gesture choice");
-                return;
+                ChooseGestures();
             }
+           
         }
 
     }

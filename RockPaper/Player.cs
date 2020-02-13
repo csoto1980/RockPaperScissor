@@ -14,23 +14,15 @@ namespace RockPaper
         public string gesture;
         public List<string> gestures;
 
+
         //Constructor
         public Player()
-        {
-            List<string> gestures = new List<string>();
-            gestures.Add("Rock");
-            gestures.Add("Paper");
-            gestures.Add("Scissors");
-            gestures.Add("Lizard");
-            gestures.Add("Spoke");
+        { 
+
         }
-     
         //Method
         public abstract void ChooseGestures();
-   
-
-
-
 
     }
+
 }

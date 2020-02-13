@@ -9,22 +9,13 @@ namespace RockPaper
     public class Game
     {
         //Member Variables
-        
-        public int player1Score;
-        public int player2Score;
-        public string player1Gesture;
-        public string player2Gesture;
         public Player player1;
         public Player player2;
-        List<Player> gestures;
-        //List<string> gestures = new List<string> { "Rock", "Paper", "Scissors", "Lizard", "Spoke" };
 
         //Constructor
         public Game()
         {
-            player1Score = 0;
-            player2Score = 0;
-            gestures = new List<Player>();
+
         }
 
         //Methods
@@ -57,10 +48,10 @@ namespace RockPaper
                 player1 = new Human();
                 player2 = new Computer();
             }
-            else if (numberOfPlayers == 1)
+            else if (numberOfPlayers == 2)
             {
                 player1 = new Human();
-                player2 = new Computer();
+                player2 = new Human();
             }
             else
             {
@@ -68,120 +59,127 @@ namespace RockPaper
                 player2 = new Computer();
             }
         }
-        public void PlayerRound()
-        {
-            player1.ChooseGestures();
-            player2.ChooseGestures();
-        }
         public void ComparingGestures(string player1Gesture, string player2Gesture)
         {
-            if (player1Gesture == "Rock" && player2Gesture == "Scissors")
+            if ((player1Gesture == "Rock" || player1Gesture == "1") && (player2Gesture == "Scissors" || player2Gesture == "3"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 1 wins this round!!");
             }
-            else if (player1Gesture == "Rock" && player2Gesture == "Lizard")
+            else if ((player1Gesture == "Rock" || player1Gesture == "1") && (player2Gesture == "Lizard" || player2Gesture == "4"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 2 wins this round!");
             }
-            else if (player1Gesture == "Paper" && player2Gesture == "Rock")
+            else if ((player1Gesture == "Paper" || player1Gesture == "2") && (player2Gesture == "Rock" || player2Gesture == "1"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 1 wins this round!!");
             }
-            else if (player1Gesture == "Paper" && player2Gesture == "Spock")
+            else if ((player1Gesture == "Paper" || player1Gesture == "2") && (player2Gesture == "Spock" || player2Gesture == "5"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 1 wins this round!!");
             }
-            else if (player1Gesture == "Lizard" && player2Gesture == "Spock")
+            else if ((player1Gesture == "Scissors" || player1Gesture == "3") && (player2Gesture == "Paper"|| player2Gesture == "2"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 1 wins this round!!");
             }
-            else if (player1Gesture == "Lizard" && player2Gesture == "Paper")
+            else if ((player1Gesture == "Scissors" || player1Gesture == "3") && (player2Gesture == "Lizard" || player2Gesture == "4"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 1 wins this round!!");
             }
-            else if (player1Gesture == "Spock" && player2Gesture == "Scissors")
+
+            else if ((player1Gesture == "Lizard" || player1Gesture == "4") && (player2Gesture == "Spock" || player2Gesture == "5"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 1 wins this round!!");
             }
-            else if (player1Gesture == "Spock" && player2Gesture == "Rock")
+            else if ((player1Gesture == "Lizard" || player1Gesture == "4") && (player2Gesture == "Paper" || player2Gesture == "2"))
             {
                 player1.score += 1;
                 Console.WriteLine("Player 1 wins this round!!");
             }
-            else if (player2Gesture == "Rock" && player1Gesture == "Scissors")
+            else if ((player1Gesture == "Spock" || player1Gesture == "5") && (player2Gesture == "Scissors" || player2Gesture == "3"))
+            {
+                player1.score += 1;
+                Console.WriteLine("Player 1 wins this round!!");
+            }
+            else if ((player1Gesture == "Spock" || player1Gesture == "5") && (player2Gesture == "Rock" || player2Gesture == "1"))
+            {
+                player1.score += 1;
+                Console.WriteLine("Player 1 wins this round!!");
+            }
+
+            else if ((player2Gesture == "Rock" || player2Gesture == "1") && (player1Gesture == "Scissors" || player1Gesture == "3"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Rock" && player1Gesture == "Lizard")
+            else if ((player2Gesture == "Rock" || player2Gesture == "1") && (player1Gesture == "Lizard" || player1Gesture == "4"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Paper" && player1Gesture == "Rock")
+            else if ((player2Gesture == "Paper" || player2Gesture == "2") && (player1Gesture == "Rock" || player1Gesture == "1"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Paper" && player1Gesture == "Spock")
+            else if ((player2Gesture == "Paper" || player2Gesture == "2") && (player1Gesture == "Spock" || player1Gesture == "5"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Scissors" && player1Gesture == "Paper")
+            else if ((player2Gesture == "Scissors" || player2Gesture == "3") && (player1Gesture == "Paper" || player1Gesture == "2"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Scissors" && player1Gesture == "Lizard")
+            else if ((player2Gesture == "Scissors" || player2Gesture == "3") && (player1Gesture == "Lizard" || player1Gesture == "4"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Lizard" && player1Gesture == "Spock")
+            else if ((player2Gesture == "Lizard" || player2Gesture == "4") && (player1Gesture == "Spock" || player1Gesture == "5"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Lizard" && player1Gesture == "Paper")
+            else if ((player2Gesture == "Lizard" || player2Gesture == "4") && (player1Gesture == "Paper" || player1Gesture == "2"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Spock" && player1Gesture == "Paper")
+            else if ((player2Gesture == "Spock" || player2Gesture == "5") && (player1Gesture == "Scissors" || player1Gesture == "3"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Spock" && player1Gesture == "Rock")
+            else if ((player2Gesture == "Spock" || player2Gesture == "5") && (player1Gesture == "Rock" || player1Gesture == "1"))
             {
                 player2.score += 1;
                 Console.WriteLine("Player 2 wins this round!!");
             }
-            else if (player2Gesture == "Rock" && player1Gesture == "Rock")
+            else if ((player1Gesture == "Rock" || player1Gesture == "1") && (player2Gesture == "Rock" || player2Gesture == "1"))
             {
                 Console.WriteLine("Tie...play again.");
             }
-            else if (player2Gesture == "Paper" && player1Gesture == "Paper")
+            else if ((player1Gesture == "Paper" || player1Gesture == "2") && (player1Gesture == "Paper" || player2Gesture == "2"))
             {
                 Console.WriteLine("Tie...play again.");
             }
-            else if (player2Gesture == "Scissors" && player1Gesture == "Scissors")
+            else if ((player1Gesture == "Scissors" || player1Gesture == "3") && (player1Gesture == "Scissors" || player2Gesture == "3"))
             {
                 Console.WriteLine("Tie...play again.");
             }
-            else if (player2Gesture == "Lizard" && player1Gesture == "Lizard")
+            else if ((player1Gesture == "Lizard" || player1Gesture == "4") && (player1Gesture == "Lizard" || player2Gesture == "4"))
             {
                 Console.WriteLine("Tie...play again.");
             }
-            else if (player2Gesture == "Spoke" && player1Gesture == "Spoke")
+            else if ((player1Gesture == "Spoke" || player1Gesture == "5") && (player1Gesture == "Spoke" || player2Gesture == "5"))
             {
                 Console.WriteLine("Tie...play again.");
             }
@@ -204,12 +202,14 @@ namespace RockPaper
             SetPlayers(input);
             player1.ChooseGestures();
             player2.ChooseGestures();
-            while (player1Score < 3 && player2Score < 3)
+            ComparingGestures(player1.gesture, player2.gesture);
+            while (player1.score < 3 && player2.score < 3)
             {
                 player1.ChooseGestures();
                 player2.ChooseGestures();
-                ComparingGestures(player1Gesture, player2Gesture);
+                ComparingGestures(player1.gesture, player2.gesture);
             }
+            DisplayGameWinner();
         }
     }
 
