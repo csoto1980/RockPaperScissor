@@ -11,13 +11,18 @@ namespace RockPaper
         //Member Variables
 
         //Constructor
-        public Human(string name)
+        public Human()
         {
-            this.name = name;
-            int score = 0;
+            Console.WriteLine("Enter Player name: ");
+            name = Console.ReadLine();
+            score = 0;
         }
-        
         //Member Methods
+        public override void ChooseGestures()
+        {
+            Console.WriteLine("Choose your gesture: (1-Rock, 2-Papers, 3-Scissors, 4-Lizard or 5-Spoke");
+            int input = int.Parse(Console.ReadLine());
+        }
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RockPaper
 {
-    class Motion
+    class Player
     {
     }
 }

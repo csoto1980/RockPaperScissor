@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace RockPaper
 {
-    class Computer
+    public class Computer : Player
     {
+        //member variables
+
+
+        //Constructor
+        public Computer()
+        {
+            name = "Robo";
+            score = 0;
+        }
+
+        //Member Methods
+        public override void ChooseGestures() //random choice of gestures
+        {
+            Random ran = new Random();
+            int randomIndex = ran.Next(0, 5); // "next" is a method
+            gesture = gestures[randomIndex];
+        }
+
     }
 }
