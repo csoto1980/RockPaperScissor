@@ -10,7 +10,6 @@ namespace RockPaper
     {
         //member variables
 
-
         //Constructor
         public Computer()
         {
