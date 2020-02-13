@@ -22,35 +22,42 @@ namespace RockPaper
         //Constructor
         public Game()
         {
+            player1Score = 0;
+            player2Score = 0;
             gestures = new List<Player>();
         }
 
         //Methods
         public void StartGame()
         {
-            Console.WriteLine("Welcome to Rock, Paper, Scissor, Lizard Spock. The rules are simple");
-            Console.WriteLine("/n");
-            Console.WriteLine("Ro");
-            string input = GetNumberOfPlayers();
-            SetPlayers(input);
-            PlayerRound();
-            player1.ChooseGestures();
-            player2.ChooseGestures();
+            Console.WriteLine("Welcome to Rock, Paper, Scissor, Lizard Spock!");
+            Console.WriteLine("How to play?...Oh, it's very simple:");
+            Console.WriteLine("Scissors cut paper");          
+            Console.WriteLine("Paper covers rock");           
+            Console.WriteLine("Rock crushes lizard");          
+            Console.WriteLine("Lizard poisons spoke");            
+            Console.WriteLine("Spoke smashes scissors");
+            Console.WriteLine("Scissors decapitates lizard");            
+            Console.WriteLine("Lizard eats paper");           
+            Console.WriteLine("Paper disproves spoke");           
+            Console.WriteLine("Spoke vaporizes rock");            
+            Console.WriteLine("...and as it always has, rock crushes scissors");
+
         }
-        public string GetNumberOfPlayers()
+        public int GetNumberOfPlayers()
         {
             Console.WriteLine("1 or 2 players?");
-            string numberOfPlayers = Console.ReadLine();
+            int numberOfPlayers = int.Parse(Console.ReadLine());
             return numberOfPlayers;
         }
-        private void SetPlayers(string numberOFPlayers)
+        public void SetPlayers(int numberOfPlayers)
         {
-            if (numberOFPlayers == "1")
+            if (numberOfPlayers == 1)
             {
                 player1 = new Human();
                 player2 = new Computer();
             }
-            else if (numberOFPlayers == "2")
+            else if (numberOfPlayers == 1)
             {
                 player1 = new Human();
                 player2 = new Computer();
@@ -192,33 +199,18 @@ namespace RockPaper
         }
         public void RunGame()
         {
-            string players = GetNumberOfPlayers();
-            SetPlayers(players);
+            StartGame();
+            int input = GetNumberOfPlayers();
+            SetPlayers(input);
             player1.ChooseGestures();
             player2.ChooseGestures();
-            while (player1Score < 3 && player2Score <3)
+            while (player1Score < 3 && player2Score < 3)
             {
                 player1.ChooseGestures();
                 player2.ChooseGestures();
                 ComparingGestures(player1Gesture, player2Gesture);
             }
-            DisplayGameWinner();
-            //ComparingGestures();
         }
-
-
-
-        //public void DisplayGestureOptioins()
-        // {
-        //list of gestures
-        //}
-        //public string GetStringInput(string word)
-        // {
-        //Console.WriteLine($"Enter{word}");
-        //  string input = Console.ReadLine();
-        //return input;
-        // }
-
     }
 
 }
