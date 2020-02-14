@@ -14,15 +14,13 @@ namespace RockPaper
         public string gesture;
         public List<string> gestures;
 
-
         //Constructor
         public Player()
         { 
 
         }
+       
         //Method
         public abstract void ChooseGestures();
-
     }
-
 }

@@ -21,19 +21,28 @@ namespace RockPaper
         //Methods
         public void StartGame()
         {
-            Console.WriteLine("Welcome to Rock, Paper, Scissor, Lizard Spock!");
-            Console.WriteLine("How to play?...Oh, it's very simple:");
-            Console.WriteLine("Scissors cut paper");          
-            Console.WriteLine("Paper covers rock");           
-            Console.WriteLine("Rock crushes lizard");          
-            Console.WriteLine("Lizard poisons spoke");            
-            Console.WriteLine("Spoke smashes scissors");
-            Console.WriteLine("Scissors decapitates lizard");            
-            Console.WriteLine("Lizard eats paper");           
-            Console.WriteLine("Paper disproves spoke");           
-            Console.WriteLine("Spoke vaporizes rock");            
-            Console.WriteLine("...and as it always has, rock crushes scissors");
-
+            Console.WriteLine(); 
+            Console.WriteLine("Welcome to - ROCK-PAPER-SCISSORS-LIZARD-SPOCK - The Game");
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("             ROCK-PAPER-SCISSORS-LIZARD-SPOCK");
+            Console.WriteLine("         was created by internet pioneer, Sam Kass ");
+            Console.WriteLine("       as an improvement on the classic game of ");
+            Console.WriteLine("                   ROCK-PAPER-SCISSORS");
+            Console.WriteLine("********************************************************");
+            Console.WriteLine();
+            Console.WriteLine("         HOW DOES IT WORK? ...Oh, it's very simple:");
+            Console.WriteLine("                   Scissors cut Paper");          
+            Console.WriteLine("                   Paper covers Rock");           
+            Console.WriteLine("                   Rock crushes Lizard");          
+            Console.WriteLine("                   Lizard poisons Spoke");            
+            Console.WriteLine("                   Spock smashes Scissors");
+            Console.WriteLine("                   Scissors decapitates Lizard");            
+            Console.WriteLine("                   Lizard eats Paper");           
+            Console.WriteLine("                   Paper disproves Spock");           
+            Console.WriteLine("                   Spock vaporizes rock");            
+            Console.WriteLine("      ...and as it always has...Rock crushes Scissors");
+            Console.WriteLine();
+            Console.WriteLine("********************************************************");
         }
         public int GetNumberOfPlayers()
         {
@@ -64,7 +73,7 @@ namespace RockPaper
             if ((player1Gesture == "Rock" || player1Gesture == "1") && (player2Gesture == "Scissors" || player2Gesture == "3"))
             {
                 player1.score += 1;
-                Console.WriteLine("Player 1 wins this round!!");
+                Console.WriteLine("Player 1 win s this round!!");
             }
             else if ((player1Gesture == "Rock" || player1Gesture == "1") && (player2Gesture == "Lizard" || player2Gesture == "4"))
             {
@@ -179,7 +188,7 @@ namespace RockPaper
             {
                 Console.WriteLine("Tie...play again.");
             }
-            else if ((player1Gesture == "Spoke" || player1Gesture == "5") && (player1Gesture == "Spoke" || player2Gesture == "5"))
+            else if ((player1Gesture == "Spock" || player1Gesture == "5") && (player1Gesture == "Spock" || player2Gesture == "5"))
             {
                 Console.WriteLine("Tie...play again.");
             }
@@ -195,7 +204,7 @@ namespace RockPaper
                 Console.WriteLine("Player 2 wins the game!");
             }
         }
-        public void RunGame()
+        public void RunGame() 
         {
             StartGame();
             int input = GetNumberOfPlayers();

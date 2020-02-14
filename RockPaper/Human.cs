@@ -16,12 +16,12 @@ namespace RockPaper
             score = 0;
             Console.WriteLine("Enter Player name: ");
             name = Console.ReadLine();
-        
         }
+        
         //Member Methods
         public override void ChooseGestures()
         {
-            Console.WriteLine("Choose your gesture: (1-Rock, 2-Paper, 3-Scissors, 4-Lizard or 5-Spoke)");
+            Console.WriteLine("Choose your gesture: (1-Rock, 2-Paper, 3-Scissors, 4-Lizard or 5-Spock)");
             gesture = Console.ReadLine();
             if(gesture == "1" || gesture == "Rock" )
             {
@@ -44,9 +44,9 @@ namespace RockPaper
                 Console.WriteLine("Lizard it is. Good Luck!");
                 return;
             }
-            else if (gesture == "5" || gesture == "Spoke")
+            else if (gesture == "5" || gesture == "Spock")
             {
-                Console.WriteLine("Spoke it is. Good Luck!");
+                Console.WriteLine("Spock it is. Good Luck!");
                 return;
             }
             else
@@ -54,8 +54,6 @@ namespace RockPaper
                 Console.WriteLine("Invalid choice. Please enter number associated with your gesture choice");
                 ChooseGestures();
             }
-           
         }
-
     }
 }

@@ -10,7 +10,6 @@ namespace RockPaper
     {
         //member variables
         
-
         //Constructor
         public Computer()
         {
@@ -27,8 +26,6 @@ namespace RockPaper
             int randomIndex = ran.Next(0, 5);
             gesture = gestures[randomIndex];
             Console.WriteLine("Robo's gesture is " + gesture + ".");
-           
         }
-
     }
 }
